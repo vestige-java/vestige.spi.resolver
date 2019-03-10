@@ -38,4 +38,6 @@ public interface ResolvedClassLoaderConfiguration {
 
     boolean isAttachmentScoped();
 
+    VestigeJar getFirstVestigeJar();
+
 }
