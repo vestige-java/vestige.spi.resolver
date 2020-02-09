@@ -1,0 +1,7 @@
+<differences>
+  <difference>
+    <className>**/*</className>
+    <differenceType>7012</differenceType>
+    <method>*</method>
+  </difference>
+</differences>

@@ -37,6 +37,4 @@ public interface VestigeJarEntry {
 
     Certificate[] getCertificates();
 
-    VestigeJarEntry nextEntry();
-
 }

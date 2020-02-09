@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.security.Permission;
 import java.util.Collection;
+import java.util.Enumeration;
 
 /**
  * @author Gael Lalire
@@ -38,6 +39,9 @@ public interface ResolvedClassLoaderConfiguration {
 
     boolean isAttachmentScoped();
 
-    VestigeJar getFirstVestigeJar();
+    /**
+     * @since 2.0
+     */
+    Enumeration<? extends VestigeJar> getVestigeJarEnumeration();
 
 }

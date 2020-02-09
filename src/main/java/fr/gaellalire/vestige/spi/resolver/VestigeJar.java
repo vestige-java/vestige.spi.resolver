@@ -16,9 +16,11 @@
 
 package fr.gaellalire.vestige.spi.resolver;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.Enumeration;
 import java.util.jar.Manifest;
 
 /**
@@ -30,9 +32,15 @@ public interface VestigeJar {
 
     String getName();
 
-    VestigeJar getNext();
+    /**
+     * @since 2.0
+     */
+    VestigeJarEntry getEntry(String name) throws IOException;
 
-    VestigeJarEntry getFirstEntry() throws IOException;
+    /**
+     * @since 2.0
+     */
+    Enumeration<? extends VestigeJarEntry> getEntries() throws IOException;
 
     long getLastModified();
 
@@ -41,5 +49,12 @@ public interface VestigeJar {
     long getSize();
 
     InputStream open() throws IOException;
+
+    /**
+     * This method should not be used in secure context as the file may be changed after its signature verification. Also it will need read permission anywhere because you don't
+     * know where the file is (resolver dependent).
+     */
+    @Deprecated
+    File getFile();
 
 }
