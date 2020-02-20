@@ -28,6 +28,11 @@ import java.util.jar.Manifest;
  */
 public interface VestigeJar {
 
+    /**
+     * The URL to use if you want to create a {@link java.security.CodeSource} for classes inside this Jar. Don't try to call {@link URL#openConnection()} as you might not have
+     * necessary permissions. If you use an {@link java.net.URLClassLoader.URLClassLoader}, overload {@link java.net.URLClassLoader.URLClassLoader#getPermissions} and do not
+     * require any permission for this URL (you can use {@link java.util.IdentityHashMap} to be sure it is the URL created by vestige).
+     */
     URL getCodeBase();
 
     String getName();
