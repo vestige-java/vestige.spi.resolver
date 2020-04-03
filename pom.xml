@@ -194,6 +194,18 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>gaellalire_nexus</id>
+      <url>https://gaellalire.fr/nexus/content/repositories/releases/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
   <repositories>
     <repository>
       <id>gaellalire_nexus</id>
