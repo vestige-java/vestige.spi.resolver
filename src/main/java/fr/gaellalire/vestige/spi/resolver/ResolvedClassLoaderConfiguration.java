@@ -44,4 +44,15 @@ public interface ResolvedClassLoaderConfiguration {
      */
     Enumeration<? extends VestigeJar> getVestigeJarEnumeration();
 
+    /**
+     * @param verificationMetadata verification metadata you can get with {@link #createVerificationMetadata(String)}.
+     * @since 2.1
+     */
+    AttachedClassLoader verifiedAttach(String verificationMetadata) throws ResolverException, InterruptedException;
+
+    /**
+     * @since 2.1
+     */
+    String createVerificationMetadata() throws ResolverException;
+
 }
