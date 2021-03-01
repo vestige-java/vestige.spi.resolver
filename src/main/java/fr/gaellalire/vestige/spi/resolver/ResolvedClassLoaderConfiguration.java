@@ -31,7 +31,7 @@ public interface ResolvedClassLoaderConfiguration {
 
     /**
      * Save this object to objectOutputStream. You can restore it using {@link VestigeResolver#restoreSavedResolvedClassLoaderConfiguration(java.io.ObjectInputStream)}. Use the
-     * resolver which was used to create this object initialy or you may have restoration issue.
+     * resolver which was used to create this object initially or you may have restoration issue.
      */
     void save(ObjectOutputStream objectOutputStream) throws IOException;
 

@@ -19,6 +19,7 @@ package fr.gaellalire.vestige.spi.resolver;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.Enumeration;
 import java.util.jar.Manifest;
@@ -61,5 +62,12 @@ public interface VestigeJar {
      */
     @Deprecated
     File getFile();
+
+    /**
+     * Save this object to objectOutputStream. You can restore it using {@link VestigeResolver#restoreSavedVestigeJar(java.io.ObjectInputStream)}. Use the resolver which was used
+     * to create this object initially or you may have restoration issue.
+     * @since 2.2
+     */
+    void save(ObjectOutputStream objectOutputStream) throws IOException;
 
 }

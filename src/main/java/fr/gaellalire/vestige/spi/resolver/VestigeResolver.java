@@ -30,4 +30,11 @@ public interface VestigeResolver {
      */
     ResolvedClassLoaderConfiguration restoreSavedResolvedClassLoaderConfiguration(ObjectInputStream objectInputStream) throws IOException;
 
+    /**
+     * Restore a previously saved {@link VestigeJar}.
+     * @see VestigeJar#save(java.io.ObjectOutputStream)
+     * @since 2.2
+     */
+    VestigeJar restoreSavedVestigeJar(ObjectInputStream objectInputStream) throws IOException;
+
 }
